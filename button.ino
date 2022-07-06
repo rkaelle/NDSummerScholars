@@ -53,25 +53,25 @@ void loop () {
     case SEGMENT_1:
       if(digitalRead(STWO) == LOW) {
         systemState = SEGMENT_2;
-        analogWrite(PWMA, 111);
+        analogWrite(PWMA, 114);
       }
       break;
     case SEGMENT_2:
       if(digitalRead(STHREE) == LOW) {
         systemState = SEGMENT_3;
-        analogWrite(PWMA, 105);
+        analogWrite(PWMA, 110);
       }
       break;
     case SEGMENT_3:
       if(digitalRead(SFOUR) == LOW) {
         systemState = SEGMENT_4;
-        analogWrite(PWMA, 130);
+        analogWrite(PWMA, 140);
       }
       break;
     case SEGMENT_4:
       if(digitalRead(SFIVE) == LOW) {
         systemState = SEGMENT_5;
-        analogWrite(PWMA, 110);
+        analogWrite(PWMA, 140);
       }
       break;
     case SEGMENT_5:
