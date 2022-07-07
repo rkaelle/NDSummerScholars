@@ -24,7 +24,6 @@ int systemState;
 int idlespeed = 111;
 
 
-void setup () {
   //put your setup code here, to run once:
   pinMode(GREEN_LED,OUTPUT);
   pinMode(PWMA,OUTPUT);
@@ -59,19 +58,19 @@ void loop () {
     case SEGMENT_2:
       if(digitalRead(STHREE) == LOW) {
         systemState = SEGMENT_3;
-        analogWrite(PWMA, 110);
+        analogWrite(PWMA, 125);
       }
       break;
     case SEGMENT_3:
       if(digitalRead(SFOUR) == LOW) {
         systemState = SEGMENT_4;
-        analogWrite(PWMA, 140);
+        analogWrite(PWMA, 145);
       }
       break;
     case SEGMENT_4:
       if(digitalRead(SFIVE) == LOW) {
         systemState = SEGMENT_5;
-        analogWrite(PWMA, 140);
+        analogWrite(PWMA, 147);
       }
       break;
     case SEGMENT_5:
