@@ -22,7 +22,7 @@
 
 int systemState;
 int idlespeed = 111;
-
+int lapNumber = 0;
 
 void setup () {
   //put your setup code here, to run once:
@@ -59,13 +59,13 @@ void loop () {
     case SEGMENT_2:
       if(digitalRead(STHREE) == LOW) {
         systemState = SEGMENT_3;
-        analogWrite(PWMA, 125);
+        analogWrite(PWMA, 128);
       }
       break;
     case SEGMENT_3:
       if(digitalRead(SFOUR) == LOW) {
         systemState = SEGMENT_4;
-        analogWrite(PWMA, 150);
+        analogWrite(PWMA, 155);
       }
       break;
     case SEGMENT_4:
@@ -76,9 +76,16 @@ void loop () {
       break;
     case SEGMENT_5:
       if(digitalRead(SONE) == LOW) {
+        lapNumber = lapNumber + 1;
         systemState = SEGMENT_1;
         analogWrite(PWMA, 120);
+        switch(lapNumber) {
+          case 5:
+            analogWrite(PWMA, 255);
+            }
+            break;
       }
       break;
   }
+  
 }
